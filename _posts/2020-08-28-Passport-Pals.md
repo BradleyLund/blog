@@ -20,9 +20,10 @@ The idea came up  while I was in Spain working as an English teacher. There are 
 <p>If we ever wanted to meet up in a foreign country it would be nice to see what country would be the most convenient and on our bucket lists too. </p>
 
 <h2>Technologies Used</h2>
+<!-- add icons for each technology here -->
 <p>
     <ul>
-        <li>Node.js</li>
+        <li>Node.js</li> 
         <li>MongoDB</li>
         <li>Express</li>
         <li>Html</li>
