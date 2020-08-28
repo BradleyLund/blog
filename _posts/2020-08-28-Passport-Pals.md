@@ -15,9 +15,20 @@ The idea came up  while I was in Spain working as an English teacher. There are 
 
 <p>We all had varying difficulties of getting a visa to work in Spain, EU citizens had no worries, Americans had to apply for a student visa which was a bit of a hassle similar to the hassle I had faced. </p>
 
-<p>When we would discuss places to travel as a group. the good old green mamba was a bit of a hindrance</p>
+<p>When we would discuss places to travel as a group, the good old green mamba was a bit of a hindrance. Luckily I had a visa that let me move around the Schengen zone. It still made me think of the differences we experienced purely based on the place we were born and the passport we hold.</p>
 
-<h2>Technologies used</h2>
+<p>If we ever wanted to meet up in a foreign country it would be nice to see what country would be the most convenient and on our bucket lists too. </p>
+
+<h2>Technologies Used</h2>
+<p>
+    <ul>
+        <li>Node.js</li>
+        <li>MongoDB</li>
+        <li>Express</li>
+        <li>Html</li>
+        <li>CSS</li>
+    </ul>
+</p>
 
 <h2>Issues faced</h2>
 
