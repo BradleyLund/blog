@@ -5,7 +5,17 @@ title:  "Passport Pals 2.0"
 
 <h2>Why I made Passport Pals.</h2>
 
-Passport Pals is a little passion project and my first Full-Stack Application.
+<p>Passport Pals is a little passion project and my first Full-Stack Application.
+
+I have had this in my google keep for ages. It's been something I've wanted to make for a while. 
+
+The idea came up  while I was in Spain working as an English teacher. There are many foreign English teachers in Madrid and we all tend to hang out together. The teachers are from all over the place. Over my time in Madrid I met people from Spain(what are the odds?), Australia, England, Ireland, Philipinnes, Argentina, Canada a load of people from the US and many more. </p>
+
+<p>All of these friends I met were keen on taking advantage of our youth and proximity to the rest of Europe (except for the Irish and the English, they can eat croissants in Paris for breakfast and Paella in Valencia for dinner if they liked). </p>
+
+<p>We all had varying difficulties of getting a visa to work in Spain, EU citizens had no worries, Americans had to apply for a student visa which was a bit of a hassle similar to the hassle I had faced. </p>
+
+<p>When we would discuss places to travel as a group. the good old green mamba was a bit of a hindrance</p>
 
 <h2>Technologies used</h2>
 
