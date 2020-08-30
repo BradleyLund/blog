@@ -1,4 +1,0 @@
----
-layout: post
-title:  "FreeCodeCamp Javascript Algorithms and Data Structures"
----

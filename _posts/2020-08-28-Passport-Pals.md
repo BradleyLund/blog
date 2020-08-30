@@ -27,7 +27,7 @@ The idea came up  while I was in Spain working as an English teacher. There are 
 <!-- add icons for each technology here -->
 <p>
     <ul>
-        <li>Node.js</li> 
+        <li>Node.js</li>
         <li>MongoDB</li>
         <li>Express</li>
         <li>Html</li>
