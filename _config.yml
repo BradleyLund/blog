@@ -23,7 +23,7 @@ email: bradjlund@gmail.com
 description: My personal blog where I post about my coding journey and talk through the projects I've made.
 baseurl: "/blog" # the subpath of your site, e.g. /blog
 url: "https://bradleylund.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
+# twitter_username: jekyllrb
 github_username:  BradleyLund
 
 # Build settings

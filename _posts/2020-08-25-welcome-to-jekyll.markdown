@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Passport Pals"
+title:  "Welcome to Jekyll"
 date:   2020-08-25 18:36:31 +0200
 categories: jekyll update
 ---
