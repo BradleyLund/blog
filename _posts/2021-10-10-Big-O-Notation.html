@@ -25,29 +25,24 @@ title: "Big O notation basics for web developers"
         // loop through the matrix and work out how many mines each cell is touching
   for (let i = 0; i &#x3C; gameArray.length; i++) {
     for (let j = 0; j &#x3C; gameArray[i].length; j++) {
-      if (gameArray[i][j] !== 9) {
-        let count = 0;
+     
+     // Inside here we would check out whether each of the neighbours was a bomb
 
-        // looping through the surrounding squares, checking undefined neighbours if it is an edge square
-        for (let k = -1; k &#x3C; 2; k++) {
-          if (gameArray[i + k] !== undefined) {
-            for (let l = -1; l &#x3C; 2; l++) {
-              if (gameArray[i + k][j + l] !== undefined) {
-                // console.log(game[i + k][0 + l])
-                if (gameArray[i + k][j + l] === 9) {
-                  count++;
-                }
-              }
-            }
-          }
-        }
-        // push the neighbouring bombCOunt to the gameArray in its position
-        gameArray[i][j] = count;
-      }
     }
   }
     </code>
 </pre>
+
+    The example above is an example I encountered while building the minesweeper game. This is a great example of an
+    O(n^2) if it is a square grid you are playing on in minesweeper or an example of O(m*n) if the minesweeper grid is
+    rectangle. Lets assume its a square one where gameArray.length === n, and gameArray[i].length === n.
+
+    For a 10 x 10 mine grid the outer loop would be executed 10 times and the inner loop 10 times for each of the 10
+    times of execution in the outer loop. Thus if we printed 'HI' inside the inner loop it would display 100 times.
+
+    The reason this is O(n^2) is the algorithm's performance is directly related to the square of the value of n.
+    If we increased n to 100, for example, we would print 'HI' 10 000 times compared to 100. So an increase by 10 on the
+    value of n resulted in an increase of 100 times the output, i.e. n^2
 
 </p>
 
