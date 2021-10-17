@@ -5,88 +5,82 @@ title: "Concurrency in Web development"
 
 <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/passport.css">
 
-<h2>The project:</h2>
+<h2>Concurrency</h2>
 
-<a href="https://pacific-mountain-86944.herokuapp.com/">PassportPals</a>
+<p>Concurrency, put simply, is the running of multiple things at the same time. i.e. concurrently. The </p>
 
-<p>Please be patient if it takes a while to load. It is only on the free version of Heroku and will take time.</p>
-
-<h2>Technologies Used</h2>
-<!-- add icons for each technology here -->
-<div class="icons">
-
-    <img src="{{ site.baseurl }}/assets/images/590px-Node.js_logo.svg.png" alt="nodejs logo"></li>
-    <img src="{{ site.baseurl }}/assets/images/mongo.png" alt="mongoDB logo"></li>
-    <img src="{{ site.baseurl }}/assets/images/express.png" alt="express logo"></li>
-    <img src="{{ site.baseurl }}/assets/images/puppeteer.png" alt="puppeteer logo"></li>
-    <img src="{{ site.baseurl }}/assets/images/pug.png" alt="pug logo"></li>
-
-
-</div>
-
-<h2>Learning resources used:</h2>
-<ul>
-    <li><a href="https://www.youtube.com/watch?v=TzZ3YOUhCxo">Youtube Tutorial by Aaron Jack on web scraping with
-            puppeteer</a></li>
-    <li><a href="https://www.youtube.com/watch?v=7FjhF6Hy9gY">Youtube Tutorial by Aaron Jack on building a full stack
-            app with web scraping</a></li>
-    <li><a href="https://www.freecodecamp.org/learn">freeCodeCamp APIs and Microservices Certification</a></li>
-    <li><a
-            href="https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/Tutorial_local_library_website">Express
-            Tutorial: The Local Library website (MDN web docs)</a>
-    </li>
-</ul>
-
-<p>These were the most important and relevant tutorials that I used and adapted to make the PassportPals application.
-    I discovered the youtube web scraping video first and this gave me a lot of hope. I then knew how to scrape the data
-    I needed but hadn't worked with databases yet.
-    Then I did the FreeCodeCamp course which taught me all that I needed to know in order to use MongoDB.
-    The MDN Web docs tutorial was the icing on the cake that brought it all together and showed me how to take it all
-    and put it into a live application.
+<p>
+    There are a couple of ways to deal with concurrency and different programming languages solve similar problems in
+    their own unique way. Concurrency is an interesting problem to solve and a very important one.
+    Sometimes the solution to the concurrency problem is solved by using a multi-process architecture or a
+    multi-threaded architecture.
 </p>
 
-<h2>Why I made Passport Pals.</h2>
+<p>
+    A multi-process architecture makes use of preforking, where it isolates different requests which get assigned their
+    own portion of memory on the CPU. A multi-threaded architecture has a difference to multi-processing in that threads
+    share the same
+    process' address space, while each of them can have different individual tasks. Due to multiple threads having
+    access to the same state
+    it is important to coordinate any changes. two threads might increase a state variable by 1 at the same time. Which
+    might result in the state variable only being incremented to 2, and not to 3 if they aren't synchronized well
+</p>
 
-<p>Passport Pals is a passion project and my first Full-Stack Application. I have had this in my google keep for ages.
-    It's been something I've wanted to make for a while.
-    The idea came up while I was in Spain working as an English teacher. There are many foreign English teachers in
-    Madrid and we all tend to hang out together. The teachers are from all over the place. Over my time in Madrid I met
-    people from Spain (what are the odds?), Australia, England, Ireland, Philipinnes, Argentina, Canada, a load of
-    people from the US and many more. </p>
+<p>
+    An event driven architecture is another way of dealing with concurrency. Event emitters push events onto the queue
+    for processing. The event loop then processes each of these until completion and then moves onto the next event
+    All of these can be combined to solve concurrently too.
+</p>
 
-<p>All of these friends I met were keen on taking advantage of our youth and proximity to the rest of Europe (except for
-    the Irish and the English, they can eat croissants in Paris for breakfast and Paella in Valencia for dinner if they
-    liked). </p>
+<p>
+    Node.js and Javascripts chosen solution to concurrency is an event-driven architecture. The way the event loop works
+    is that the next message in the queue gets processed. In Javascript environments asynchronicity can be used to allow
+    a message to get processed in the event loop, but not necessarily to completion. Javascript can use different web
+    apis to handle asynchronous requests. The message gets handled in the event loop and sent to the web api for
+    processing. The next message in the queue can then be processed even though the previous one has not been completed
+    yet. Then once the web api has finished processing the asynchronous request, it's result gets put back into the
+    message queue to be processed once it reaches the event loop.
+</p>
 
-<p>We all had varying difficulties of getting a visa to work in Spain, EU citizens had no worries, Americans had to
-    apply for a student visa which was a bit of a hassle similar to the hassle I had faced. </p>
+<p>
+    In databases concurrency is a very important topic. It is good to be able to have some sort of concurrency so that
+    many people can be working with the same data at the same time but when this is happening it is even more important
+    to make sure that the data stays consistent.
+</p>
 
-<p>When we would discuss places to travel as a group, the good old green mamba was a bit of a hindrance. Luckily I had a
-    visa that let me move around the Schengen zone. It still made me think of the differences we experienced purely
-    based on the place we were born and the passport we hold.</p>
+<p>
+    One person might update a piece of data that might be accessed by another user. It is important the other user gets
+    the correct data. MongoDB uses multi-granularity locking.
 
-<p>If we ever wanted to meet up in a foreign country it would be nice to see what country would be the most convenient
-    and on our bucket lists too. </p>
+    MongoDB allows multiple clients to read and write the same data. It uses locking and other concurrency control
+    measures to prevent multiple clients from modifying the same piece of data simultaneously.
 
-<p>When I found this short youtube tutorial on scraping websites, I was super stoked. I thought that I had found what I
-    needed to complete the web application. Obviously this wasn't true, but it was one step closer to the final thing. I
-    had been chugging away at the freecodecamp syllabus in the meantime. I got to the API's and microservices section
-    and learned about MongoDB. This was another piece of the puzzle I needed to learn the skills required to finish the
-    passport pals application. </p>
-
-<p>I had learnt about puppeteer, mongodb. I met a friend of a friend in berlin on a weekend away in february. He was a
-    software engineer. I followed him on github and he was in the process of making a pathway to becoming a web
-    developer. I followed his pathway and one of the things he recommended was this guide on making a fullstack
-    localLibrary application with express, mongoDB and eventually deploying the app with heroku. This was perfect. This
-    was the last piece of the puzzle that I needed to follow to have the skills to make a fully functioning full-stack
-    application.</p>
+    When locking at a specific granularity, all higher levels are locked too ensuring data stays consistent for every
+    user accessing the data.
 
 
+</p>
 
-<!-- <h2>Issues faced</h2>
+<p>
+    Oracle implements statement level and transaction level read consistency to ensure data consistency. Oracle always
+    enforces statement-level consistency which makes sure the user making the query gets the data at its state at the
+    point of time when the user made the select query. Any commits that occur between the initiation of the query and
+    receiving the data will not be seen. Transaction level read consistency means that all accesses to the data will
+    reflect the state of the DB when the transaction began. They do however allow for seeing the changes made in the
+    transaction itself.
+</p>
 
-<h2>How those issues were solved</h2>
+<h2>resources used:</h2>
+<ul>
+    <li><a href="http://berb.github.io/diploma-thesis/original/042_serverarch.html">Concurrent Programming for Scalable
+            Web Architectures</a></li>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop">Concurrency model and the event loop
+            - MDN</a></li>
+    <li><a href="https://docs.oracle.com/cd/B19306_01/server.102/b14220/consist.htm">Concurrency in Oracle</a></li>
+    <li><a href="https://docs.mongodb.com/manual/faq/concurrency/">Concurrency in MongoDB</a>
+    </li>
+    <li><a href="https://www.toptal.com/software/introduction-to-concurrent-programming">Introduction to Concurrent
+            Programming: A Beginner's Guide</a>
+    </li>
 
-<h2>What I learned</h2>
-
-<h2>Tips for future me</h2> -->
+</ul>
