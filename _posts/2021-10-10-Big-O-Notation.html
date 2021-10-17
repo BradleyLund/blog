@@ -5,9 +5,51 @@ title: "Big O notation basics for web developers"
 
 <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/passport.css">
 
-<h2>Big O notation basics for web developers</h2>
+<h2>Big O notation</h2>
 
+<p>
+    Big o notation is a mathematical way to describe how any function grows depending on the input it receives.
+    This information is very important to a web developer. It is very important if you want to understand how to build
+    and work on scalable web applications. It is easy to run small web apps that only a couple of people use. In this
+    case Big O notation is not too important as when n is so small it's more important to have a web app that is up and
+    running and being used than to have it be optimized. The difference between an optimized and unoptimized algorithm
+    at this small level will be miliseconds, almost unnoticeable to a user. The issue comes in when your web app becomes
+    popular or you work at a large company with lots of data. Then the difference between using a O(n) algorithm and an
+    O(2^n) algorithm is huge and could have dire consequences.
+</p>
 
+<p>
+    An example of an O(n^2) function:
+    <pre>
+    <code>
+        // loop through the matrix and work out how many mines each cell is touching
+  for (let i = 0; i &#x3C; gameArray.length; i++) {
+    for (let j = 0; j &#x3C; gameArray[i].length; j++) {
+      if (gameArray[i][j] !== 9) {
+        let count = 0;
+
+        // looping through the surrounding squares, checking undefined neighbours if it is an edge square
+        for (let k = -1; k &#x3C; 2; k++) {
+          if (gameArray[i + k] !== undefined) {
+            for (let l = -1; l &#x3C; 2; l++) {
+              if (gameArray[i + k][j + l] !== undefined) {
+                // console.log(game[i + k][0 + l])
+                if (gameArray[i + k][j + l] === 9) {
+                  count++;
+                }
+              }
+            }
+          }
+        }
+        // push the neighbouring bombCOunt to the gameArray in its position
+        gameArray[i][j] = count;
+      }
+    }
+  }
+    </code>
+</pre>
+
+</p>
 
 <h2>resources used:</h2>
 <ul>
