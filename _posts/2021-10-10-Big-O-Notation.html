@@ -46,6 +46,80 @@ title: "Big O notation basics for web developers"
 
 </p>
 
+<p>
+    Linear searching is a search that finds elements by searching through the list in order until the element is found.
+    Binary search is more like what you would do if you were using the yellow pages. You look halfway through and see
+    whether the thing you are looking for is in the first half or the second half. In a binary search you would do this
+    recursively until the element was found.
+</p>
+
+<p>
+    For binary search you would need the list to be sorted to be able to use the method.
+
+    A linear search in big O notation could be represented as O(n), the binary search can be shown as O(log n).
+    This is because after each iteration of the binary search the dataset n is effectively halved for the next
+    iteration. This results in a curve that increases with n in the beginning but flattens out very quickly.
+</p>
+
+<p>
+    The fibonacci sequence is basically a series of numbers where the next number in the sequence depends on the two
+    numbers that come before it in the sequence. To calculate the next number you add up the two numbers in the sequence
+    that came before it.
+
+
+    An example of a non recursive algorithm which works out a fibonacci sequence up to a given number.
+    The big O notation for this example would be O(n) as when n increases the loop which works out the next fibonacci
+    number and pushes it to the array will have to execute n times
+    <pre>
+        <code>
+            // fibonacci function that isn't recursive
+
+function myFibonacci(n) {
+  let fibonacciArray = [];
+
+  //   push the first two numbers into the array as they will always be 1
+  fibonacciArray.push(1, 1);
+  while (fibonacciArray.length &lt; n) {
+    //   get the two numbers at the end of the array that need to be added
+    let int1 = fibonacciArray[fibonacciArray.length - 1];
+    let int2 = fibonacciArray[fibonacciArray.length - 2];
+
+    let newNum = int1 + int2;
+
+    fibonacciArray.push(newNum);
+  }
+
+  //   log out the first n fibonacci numbers
+  console.log(fibonacciArray);
+}
+
+myFibonacci(50);
+
+        </code>
+    </pre>
+
+    An example of a recursive function which can be used to calculate a list of fibonacci numbers
+    The big O notation of the below recursive solution to fibonacci would be O(2^n). I would not suggest using this
+    algorithm to find the first 500 fibonacci numbers. The time to calculate would increase exponentially.
+    <pre>
+        <code>
+            function fibonacci(num) {
+                if (num &lt;= 1) return 1;
+                return fibonacci(num - 1) + fibonacci(num - 2);
+              }
+              
+              let fibonacciArray = [];
+              for (let i = 0; i &lt; 10; i++) {
+                fibonacciArray.push(fibonacci(i));
+              }
+              
+              console.log(fibonacciArray);
+              
+        </code>
+    </pre>
+
+</p>
+
 <h2>resources used:</h2>
 <ul>
     <li><a href="http://berb.github.io/diploma-thesis/original/042_serverarch.html">Concurrent Programming for Scalable
