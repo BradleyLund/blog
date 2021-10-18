@@ -1,0 +1,61 @@
+---
+layout: post
+title: "How JavaScript uses hashing"
+---
+
+<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/passport.css">
+
+<h2>How JavaScript uses hashing</h2>
+
+<p>
+    Hashing is taking an input and putting it into a hashing function to and getting an output that basically obscures
+    what the input originally was. Hashing uses a very complicated "one - way" function. This is a function where you
+    cannot take the output and work out exactly what the input was. The only way to see if two things are the same input
+    for example is to put them through the hashing function and compare the 'hashes'
+</p>
+
+<p>
+    Hash tables are a very clever way of storing data. They can be used to improve a search function from O(n) in a
+    standard linear search or from O(log n) and now make it an algorithm of O(1). You would normally have key value
+    pairs in an object/list of data. You can use hashing to create a number which could be an index in an array. Thus
+    when storing names and phone numbers in a phone book for example, you hash each of the names ( the key ) into a
+    number which would be their index in the phone book array. Then when someone wants to find a persons phone number,
+    the name gets hashed into the number which is the index in the array and the number can be pulled out directly. No
+    search needed.
+</p>
+
+<p>
+    There is a very important distinction between hashing and encryption. Hashing is not intended to be used to find out
+    what the originaly input was. It is purely to confirm that two inputs are same by comparing their hashes. However,
+    when it comes to encryption, the data that is encrypted does need to be retrieved. So there needs to be a way to
+    decipher what the encrypted data once was. Thus you cannot use a so-called "one way" function to encrypt data.
+</p>
+
+<p>
+    A Map object holds key-value pairs like a normal object and it remembers the original order of insertion of all of
+    the keys. Any value can be used as either a key or a value within any pair.
+
+    Maps and objects are similar, both let you set keys to values, retrieve those values, delete keys, and detect
+    whether something is stored at a key.
+
+    The differences are that Map's don't contain any keys by default but Objects do. Maps only contain what is
+    specifically put into them. A Map's key can be any value but an objects key must be either a string or a symbol.
+    Map entries are iterable and the map object iterates in the order of entry insertion. Maps are better optimized for
+    scenarios involving frequent additions and removals of key-value pairs. Map objects must be implemented using hash
+    tables.
+</p>
+
+<h2>resources used:</h2>
+<ul>
+    <li><a
+            href="https://stackoverflow.com/questions/4948322/fundamental-difference-between-hashing-and-encryption-algorithms">Difference
+            between hashing and encryption</a>
+    </li>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map">Hashing in
+            Map</a></li>
+    <li><a href="https://262.ecma-international.org/6.0/#sec-map-objects">Ecmascript documentation on Map object</a>
+    </li>
+
+
+
+</ul>
