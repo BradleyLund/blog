@@ -9,8 +9,89 @@ title: "Interfaces in object oriented programming languages and prototype-based 
 
 <p>
     An interface is a description of all functions that an object must have in order to be a certain object. The purpose
-    of an
+    of an interface is to let the computer know that an object of a certain type will always have a set of methods that
+    come with it.
 </p>
+
+<p>
+    Javascript is not an OOP language it is an object based language. So objects are not created using classes but they
+    are all built using prototypes. With ES2015 Javascript allows the use of the class keyword but under the hood it is
+    basically a constructor function.
+
+    In the example below we can see how ES2015 implements the class keyword. This is how you could create an object. As
+    you can see each object would have a constructor function. Under the hood however it is using prototypes. If no
+    constructor method is explicitly called for the class then a default constructor will be supplied.
+    <pre>
+        <code>
+            class Person {
+
+                constructor(name) {
+                  this.name = name;
+                }
+              
+                introduce() {
+                  console.log(`Hello, my name is ${this.name}`);
+                }
+              
+              }
+              
+              const otto = new Person('Otto');
+              
+              otto.introduce();
+              
+        </code>
+    </pre>
+
+</p>
+
+<p>
+    You can emulate interfaces in Javascript. You can use comments to mimick the style of other interfacing languages,
+    this isn't very effective however and is basically just documenting the intended functionality of an interface. Two
+    other options that can be used in javascript to implement interfaces are attribute checking and duck typing. Duck
+    typing is a quacky name which basically is born from the saying: "if it walks like a duck and quacks like a duck
+    then its probably a duck 🦆 " Duck typing basically just checks what methods an object has and implements and if
+    that is inline with a certain class then the object is of a certain class.
+</p>
+
+<p>
+    Strict mode is basically an instruction sent to the browser executing a set of code that that specific code should
+    be executed in strict mode. Strict mode is useful because it makes it easier to write more secure JavaScript. Strict
+    mode does things like force the programmer to declare all variables. In normal javascript you can accidentally
+    create a new variable by just mistyping something. Javascript will then result in a silent error but when that
+    happens and strict mode is stipulated, an error will be thrown making it much easier to pick up the erro.
+</p>
+
+<p>
+    Typescript is a typed superset of Javascript that is developed by Microsoft. Typescript makes javascript into a
+    statically typed language where variables need to be given a data type on declaration. Typescript is clever and you
+    might not need to explicitly declare the datatype. It can pick it up on variable declaration like below:
+    <pre>
+        <code>
+            const user = {
+                name: "Hayes",
+                id: 0,
+              };
+        </code>
+    </pre>
+
+    Or you can explicitly declare the datatypes by using an interface like in the example below:
+    <pre>
+        <code>
+            interface User {
+                name: string;
+                id: number;
+              }
+        </code>
+    </pre>
+
+    A browser cannot run TypeScript so the typescript code that is written is compiled into javascript before being
+    executed.
+</p>
+
+<p>
+    Typescript basically uses duck typing, explained above, to build and check interfaces.
+</p>
+
 <h2>resources used:</h2>
 <ul>
     <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/constructor">Constructors
@@ -23,6 +104,10 @@ title: "Interfaces in object oriented programming languages and prototype-based 
     </li>
     <li><a href="https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html">Typescript for javascript
             programmers</a>
+    </li>
+    <li><a
+            href="https://stackoverflow.com/questions/1335851/what-does-use-strict-do-in-javascript-and-what-is-the-reasoning-behind-it#:~:text=Strict%20mode%20makes%20it%20easier,creates%20a%20new%20global%20variable.">Stackoverflow
+            strict mode explanation</a>
     </li>
 
 </ul>
